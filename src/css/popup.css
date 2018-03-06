@@ -1,0 +1,93 @@
+.popup {
+	width: 400px;
+	max-height: 50%;
+	margin: auto;
+	overflow: hidden;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 1019;
+	border-radius: 2px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	pointer-events: auto;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	-webkit-transform-origin: center center;
+	transform-origin: center center;
+	transition: opacity .15s cubic-bezier(.25,.8,.25,1), -webkit-transform .2s cubic-bezier(.25,.8,.25,1);
+	transition: opacity .15s cubic-bezier(.25,.8,.25,1), transform .2s cubic-bezier(.25,.8,.25,1);
+	transition: opacity .15s cubic-bezier(.25,.8,.25,1), transform .2s cubic-bezier(.25,.8,.25,1), -webkit-transform .2s cubic-bezier(.25,.8,.25,1);
+	will-change: opacity, transform, left, top;
+	background-color: #fff;
+	color: #333;
+	box-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12);
+	padding: 0 12px 4px 12px;
+}
+
+.popup-title {
+	position: relative;
+	display: block;
+	font-size: 14px;
+	line-height: 40px;
+	font-weight: bold;
+}
+
+.popup-body {
+	display: block;
+	position: relative;
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+.popup-content-with-icon {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 14px;
+	line-height: 20px;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+.popup-icon {
+	position: relative;
+	display: inline-block;
+	width: 56px;
+	height: 56px;
+}
+
+.icon-error {
+	background: url(../../web-static/images/newui/fail.png) no-repeat;
+}
+
+.icon-success {
+	background: url(../../web-static/images/newui/success.png) no-repeat;
+}
+
+.popup-footer {
+	position: relative;
+	float: right;
+	min-height: 32px;
+}
+
+#Cover{
+	width:100%;
+	height:100%;
+	bottom:0px;
+	right:0px;
+	position:fixed;
+	_top:0px;
+	_left:0px;
+	_position:absolute;
+	background:#000;
+	opacity:0.5;
+	filter:alpha(opacity=50);
+	display:none;
+	visibility:hidden;
+	z-index:1010;
+	transition: .35s cubic-bezier(.4,0,.2,1);
+	transition-property: opacity;
+	will-change: opacity;
+}
