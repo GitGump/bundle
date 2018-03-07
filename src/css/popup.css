@@ -28,7 +28,7 @@
 .popup-title {
 	position: relative;
 	display: block;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 40px;
 	font-weight: bold;
 }
@@ -39,6 +39,14 @@
 	width: 100%;
 	padding-top: 10px;
 	padding-bottom: 20px;
+}
+
+.popup-content {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 14px;
+	line-height: 20px;
 }
 
 .popup-content-with-icon {
@@ -58,36 +66,28 @@
 	height: 56px;
 }
 
-.icon-error {
-	background: url(../../web-static/images/newui/fail.png) no-repeat;
+.icon-warning-big {
+	background: url(../assets/icon_warning_big.png) no-repeat;
 }
 
-.icon-success {
-	background: url(../../web-static/images/newui/success.png) no-repeat;
+.icon-error-big {
+	background: url(../assets/icon_error_big.png) no-repeat;
+}
+
+.icon-success-big {
+	background: url(../assets/icon_success_big.png) no-repeat;
+}
+
+.icon-info-big {
+	background: url(../assets/icon_info_big.png) no-repeat;
+}
+
+.icon-loading-big {
+	background: url(../assets/icon_loading_big.gif) no-repeat;
 }
 
 .popup-footer {
 	position: relative;
 	float: right;
 	min-height: 32px;
-}
-
-#Cover{
-	width:100%;
-	height:100%;
-	bottom:0px;
-	right:0px;
-	position:fixed;
-	_top:0px;
-	_left:0px;
-	_position:absolute;
-	background:#000;
-	opacity:0.5;
-	filter:alpha(opacity=50);
-	display:none;
-	visibility:hidden;
-	z-index:1010;
-	transition: .35s cubic-bezier(.4,0,.2,1);
-	transition-property: opacity;
-	will-change: opacity;
 }
