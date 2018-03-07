@@ -1,0 +1,55 @@
+.notification {
+	position: fixed;
+	top: 0;
+	z-index: 1019;
+	width: 100%;
+	min-height: 24px;
+	overflow: hidden;
+	border: none;
+	background-color: #ffeceb;
+	transition: .8s cubic-bezier(.4,0,.2,1);
+	transform: translateY(40px);
+	will-change: background-color,color,opacity,transform;
+}
+
+.notification-body {
+	position: relative;
+	width: 100%;
+	text-align: center;
+	display: inline-block;
+}
+
+.notification-info {
+	position: relative;
+	display: inline-block;
+	width: auto;
+	margin-left: 5px;
+	font-size: 14px;
+	line-height: 24px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.toast-icon, .notification-icon {
+	position: relative;
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	vertical-align: middle;
+}
+
+.icon-warning-small {
+	background: url(../../web-static/images/newui/icon_warning_small.png) no-repeat;
+}
+
+.icon-error-small {
+	background: url(../../web-static/images/newui/icon_error_small.png) no-repeat;
+}
+
+.icon-success-small {
+	background: url(../../web-static/images/newui/icon_success_small.png) no-repeat;
+}
+
+.icon-info-small {
+	background: url(../../web-static/images/newui/icon_info_small.png) no-repeat;
+}
