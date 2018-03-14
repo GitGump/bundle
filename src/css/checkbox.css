@@ -1,0 +1,14 @@
+input.checkbox {
+	width: 16px;
+	height: 16px;
+	font-size: 0;
+	border: none;
+	cursor: pointer;
+	vertical-align: middle;
+}
+input.checkbox.unchecked {
+	background: url(../assets/checkbox_unchecked.png) no-repeat;
+}
+input.checkbox.checked {
+	background: url(../assets/checkbox_checked.png) no-repeat;
+}

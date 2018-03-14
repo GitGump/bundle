@@ -1,0 +1,17 @@
+input.radio {
+	width: 16px;
+	height: 16px;
+	font-size: 0;
+	border: none;
+	cursor: pointer;
+	vertical-align: middle;
+}
+input.radio.unchosen {
+	background: url(../assets/radio_unchosen.png) no-repeat;
+}
+input.radio.chosen {
+	background: url(../assets/radio_chosen.png) no-repeat;
+}
+div.radioCon {
+	display: inline-block;
+}
