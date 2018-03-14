@@ -465,7 +465,6 @@ function DataGrid()
 			}
 			else
 			{
-				/* added by songkaiqiang */
 				if (!/^\d+$/.test(valueIndex))
 				{
 					for (var i in popObj.subList)
@@ -561,7 +560,6 @@ function DataGrid()
 		    return [valueList, isAdd]
 		};
 
-		/*begin added by LiGuanghua : for type path */
 		DataGrid.prototype._fillEditRow_Path = function(td, itemIndex, index, value, listObj){
 			var span, input, obj = this, tr, indexInDataObj;
 
@@ -591,7 +589,6 @@ function DataGrid()
 				td.appendChild(span);
 			}
 		};
-		/*end added by LiGuanghua : for type path */
 
 		/* 添加“取消”和“保存”按钮在新添加的行上 */
 		DataGrid.prototype._fillEditRow_EditBtns = function(dataObj, td, index){
@@ -719,11 +716,9 @@ function DataGrid()
 				case "popVigDiy":
 					this._fillEditRow_PopVigDiy(td, itemIndex, index, value, item, data);
 					break;
-				/*begin added by LiGuanghua : for type path */
 				case "path":
 					this._fillEditRow_Path(td, itemIndex, index, value, item);
 					break;
-				/*end added by LiGuanghua : for type path */
 				case "time":
 				case "timeP":
 				case "str":
@@ -1077,7 +1072,6 @@ function DataGrid()
 					    value = item.popObj.splitValueCb((td.getAttribute(item.popObj.indexDes)));
 					}
 					break;
-				/*begin added by LiGuanghua : for type path */
 				case "path":
 					td = tr.cells[cellIndex];
 					span = this._getDomChildNode(td, "span");
@@ -1088,7 +1082,6 @@ function DataGrid()
 						return {result:result, target:span};
 					}
 					break;
-				/*end added by LiGuanghua : for type path */
 				case "select":	// select 的组织形式是：options:[{str:"xx", value:"xx"}], func:onchangeHandle
 					selCon = this._getDomChildNode(tr.cells[cellIndex], "div");
 					select = this._getDomChildNode(selCon, "span");
@@ -1297,16 +1290,16 @@ function DataGrid()
 				/* 失败的处理 */
 				function failHandle()
 				{
-					var isBackUpObjNull = true;		/* added by SongKaiqiang 表格为空时，SLP读取时无备份数据 */
+					var isBackUpObjNull = true;
 
 					/* edit失败后对数据进行还原 */
 					for (var propty in backUpObj)
 					{
-						isBackUpObjNull = false;	/* added by SongKaiqiang */
+						isBackUpObjNull = false;
 						listobj[index][propty] = backUpObj[propty];
 					}
 
-					if (isBackUpObjNull == true && mode == "add")		/* added by SongKaiqiang 如果备份数据是空，那么就删除数据 */
+					if (isBackUpObjNull == true && mode == "add")
 					{
 						listobj.splice(index, 1);
 					}
@@ -1371,7 +1364,6 @@ function DataGrid()
 					case EINVPORTFMT:
 						showAlert(errStr.portIllegalFmtErr, result.target);
 						break;
-					/*begin added by LiGuanghua : for type path */
 					case EINVPATHNULL:
 						showAlert(errStr.pathIsNull);
 						break;
@@ -1379,7 +1371,6 @@ function DataGrid()
 					case EINVPATH:
 						showAlert(errStr.invalidPath);
 						break;
-					/*end added by LiGuanghua : for type path */
 
 					default:
 						break;
@@ -1530,7 +1521,7 @@ function DataGrid()
 						}
 
 						obj._flushBtn();
-						obj._refresh();	/* added by SongKaiqiang 删除数据后，重新刷新表格 */
+						obj._refresh();
 					}
 
 					if (undefined == func)
@@ -1800,7 +1791,7 @@ function DataGrid()
 							}
 						}
 					}
-					else	/* added by songkaiqiang 修复添加但未保存数据时删除全部的问题 */
+					else
 					{
 						cleanHandle(true);
 					}
@@ -2537,7 +2528,6 @@ function DataGrid()
 			var index = dataObj[listObj.name], popObj = listObj.popObj;
 			var value, showSize;
 
-			/* added by songkaiqiang */
 			if (!/^\d+$/.test(index))
 			{
 				for (var i in popObj.subList)
@@ -2574,14 +2564,12 @@ function DataGrid()
 			td.innerHTML = htmlEscape(getStrInMax(value, showSize));
 		};
 
-		/*begin added by LiGuanghua : for type path */
 		/* 处理type="path" */
 		DataGrid.prototype._pathHandle = function(listObj, dataObj, td){
 			var value = dataObj[listObj.name];
 			td.innerHTML = htmlEscape(getStrInMax(value, 32));
 			td.title = value;
 		};
-		/*end added by LiGuanghua : for type path */
 
 		/* 处理type="signal" */
 		DataGrid.prototype._signalHandle = function(listObj, dataObj, td){
@@ -2924,11 +2912,9 @@ function DataGrid()
 				case "popVigDiy":
 					this._popVigHandleDiy(listObj, dataObj, td, item);
 					break;
-				/*begin added by LiGuanghua : for type path */
 				case "path":
 					this._pathHandle(listObj, dataObj, td);
 					break;
-				/*end added by LiGuanghua : for type path */
 				case "signal":
 					this._signalHandle(listObj, dataObj, td);
 					break;
@@ -3118,7 +3104,6 @@ function DataGrid()
 				}
 			}
 
-			/* added by songkaiqiang 表格无数据时，选中复选框后“删除所选”保持灰化状态 */
 			var dataRows = this._getDRL();
 			var isRowSel = (dataRows > 0) ? isChecked : false;
 			this._toolSelBtnState(isRowSel);
