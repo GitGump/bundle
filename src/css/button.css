@@ -1,0 +1,88 @@
+.button, .button-clean {
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+	outline: none;
+	background: transparent;
+	border: 0;
+	border-radius: 0;
+	transition: .4s cubic-bezier(.4,0,.2,1);
+	font-family: inherit;
+	line-height: normal;
+	text-transform: uppercase;
+	text-decoration: none;
+	vertical-align: top;
+	white-space: nowrap;
+}
+.button-primary {
+	min-width: 132px;
+	height: 32px;
+	margin: 6px 8px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border-radius: 2px;
+	font-size: 14px;
+	font-weight: 500;
+}
+.button-primary.button-inline {
+	margin: 0 8px;
+}
+.button-primary:not([disabled]) {
+	color: rgba(0,0,0,.87);
+	background-color: #e6e6e6;
+	cursor: pointer;
+	box-shadow: 0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);
+}
+.button-primary:not([disabled]):hover, .button-primary:not([disabled]):active {
+	background-color: #aaa;
+}
+.button-primary:not([disabled]):hover, .button-primary.button-positive:not([disabled]):hover, .button-primary.button-outline:not([disabled]):hover {
+	opacity: .8;
+	filter: alpha(opacity = 80);
+}
+.button-primary:not([disabled]):active, .button-primary.button-positive:not([disabled]):active, .button-primary.button-outline:not([disabled]):active {
+	opacity: .65;
+	filter: alpha(opacity = 65);
+}
+.button-primary.button-positive[disabled], .button-primary.button-positive:not([disabled]) {
+	color: #fff;
+	background-color: #1785e6;
+}
+.button-primary.button-outline[disabled], .button-primary.button-outline:not([disabled]) {
+	color: #1785e6;
+	background-color: #fff;
+}
+.button-primary.button-outline:not([disabled]):hover, .button-primary.button-outline:not([disabled]):active {
+	color: #fff;
+	background-color: #1785e6;
+}
+.button-primary[disabled] {
+	color: #000;
+	background-color: #aaa;
+	cursor: default;
+	box-shadow: 0;
+}
+.button-primary[disabled], .button-primary.button-positive[disabled], .button-primary.button-outline[disabled] {
+	opacity: .5;
+	filter: alpha(opacity = 50);
+}
+.button-primary.button-flat:not([disabled]), .button-primary.button-positive.button-flat:not([disabled]), .button-primary.button-outline.button-flat:not([disabled]) {
+	box-shadow: none;
+}
+.button.button-mini {
+	min-width: 80px;
+	height: 24px;
+	font-size: 12px;
+}
+.button.button-small {
+	min-width: 96px;
+	height: 32px;
+	font-size: 12px;
+}
+.button.button-large {
+	min-width: 272px;
+}
